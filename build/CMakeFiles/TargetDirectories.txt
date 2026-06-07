@@ -1,0 +1,3 @@
+C:/Users/viola/OneDrive/문서/Proyek-UAS-Heterogeneus-Computing/build/CMakeFiles/simulasi_evakuasi.dir
+C:/Users/viola/OneDrive/문서/Proyek-UAS-Heterogeneus-Computing/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/viola/OneDrive/문서/Proyek-UAS-Heterogeneus-Computing/build/CMakeFiles/ZERO_CHECK.dir

@@ -1,0 +1,6 @@
+C:\Users\viola\OneDrive\문서\Proyek-UAS-Heterogeneus-Computing\src\main.cpp;C:\Users\viola\OneDrive\문서\Proyek-UAS-Heterogeneus-Computing\build\simulasi_evakuasi.dir\Debug\main.obj
+C:\Users\viola\OneDrive\문서\Proyek-UAS-Heterogeneus-Computing\src\csv_reader.cpp;C:\Users\viola\OneDrive\문서\Proyek-UAS-Heterogeneus-Computing\build\simulasi_evakuasi.dir\Debug\csv_reader.obj
+C:\Users\viola\OneDrive\문서\Proyek-UAS-Heterogeneus-Computing\src\sequential.cpp;C:\Users\viola\OneDrive\문서\Proyek-UAS-Heterogeneus-Computing\build\simulasi_evakuasi.dir\Debug\sequential.obj
+C:\Users\viola\OneDrive\문서\Proyek-UAS-Heterogeneus-Computing\src\openmp_runner.cpp;C:\Users\viola\OneDrive\문서\Proyek-UAS-Heterogeneus-Computing\build\simulasi_evakuasi.dir\Debug\openmp_runner.obj
+C:\Users\viola\OneDrive\문서\Proyek-UAS-Heterogeneus-Computing\src\opencl_runner.cpp;C:\Users\viola\OneDrive\문서\Proyek-UAS-Heterogeneus-Computing\build\simulasi_evakuasi.dir\Debug\opencl_runner.obj
+C:\Users\viola\OneDrive\문서\Proyek-UAS-Heterogeneus-Computing\src\benchmark.cpp;C:\Users\viola\OneDrive\문서\Proyek-UAS-Heterogeneus-Computing\build\simulasi_evakuasi.dir\Debug\benchmark.obj

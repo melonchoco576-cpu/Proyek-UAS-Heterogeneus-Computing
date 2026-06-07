@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="18.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\viola\OneDrive\문서\Proyek-UAS-Heterogeneus-Computing\src\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\viola\OneDrive\문서\Proyek-UAS-Heterogeneus-Computing\src\csv_reader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\viola\OneDrive\문서\Proyek-UAS-Heterogeneus-Computing\src\sequential.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\viola\OneDrive\문서\Proyek-UAS-Heterogeneus-Computing\src\openmp_runner.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\viola\OneDrive\문서\Proyek-UAS-Heterogeneus-Computing\src\opencl_runner.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\viola\OneDrive\문서\Proyek-UAS-Heterogeneus-Computing\src\benchmark.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\viola\OneDrive\문서\Proyek-UAS-Heterogeneus-Computing\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{FB0D961D-05DC-3BFC-B0F0-D7E08FC4FD5A}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
