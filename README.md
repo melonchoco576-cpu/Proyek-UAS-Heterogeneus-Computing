@@ -1,26 +1,24 @@
 # Simulasi Waktu Evakuasi Gedung
-## Perbandingan Kinerja Sequential, OpenMP, dan OpenCL
+# Perbandingan Kinerja Sequential, OpenMP, dan OpenCL
 
 ---
 
-## Nama Penyusun
-
-Proyek ini dibuat sebagai implementasi praktis konsep **Heterogeneous Computing**
-dalam mata kuliah Komputasi Paralel dan Terdistribusi.
+# Nama Penyusun
+1. Reyfani Nazuwa Putri ( 25032014076 )
+2. Tshabita Roihana Yusriah Iman ( 25032014050 )
+3. Azzahra Regita Cahyani ( 25032014071 )
 
 ---
 
-## Deskripsi Singkat
+# Deskripsi Proyek
 
-Program ini membandingkan kinerja tiga metode komputasi — **Sequential**, **OpenMP**,
-dan **OpenCL** — dalam memproses simulasi perhitungan waktu evakuasi gedung berdasarkan
+Program ini membandingkan kinerja tiga metode komputasi — Sequential, OpenMP,
+dan OpenCL — dalam memproses simulasi perhitungan waktu evakuasi gedung berdasarkan
 data 500.000 ruangan virtual. Setiap ruangan memiliki jumlah penghuni dan jarak ke
 pintu darurat. Program mengukur waktu eksekusi, speedup, dan efficiency masing-masing
 metode, lalu menampilkan ranking performa beserta kesimpulan.
 
----
-
-## Tujuan Proyek
+# Tujuan Proyek
 
 - Membuktikan bahwa paralelisme (OpenMP, OpenCL) dapat mempercepat komputasi
   pada dataset besar dibandingkan pendekatan Sequential.
@@ -28,9 +26,7 @@ metode, lalu menampilkan ranking performa beserta kesimpulan.
   bersamaan untuk komputasi intensif.
 - Mengukur dan menganalisis speedup, efficiency, serta overhead masing-masing metode.
 
----
-
-## Fitur Utama
+# Fitur Utama
 
 1. Membaca dan memvalidasi dataset CSV (500.000 baris).
 2. Menghitung estimasi waktu evakuasi dengan rumus dasar dan komputasi tambahan
@@ -43,11 +39,8 @@ metode, lalu menampilkan ranking performa beserta kesimpulan.
 8. Perhitungan speedup dan efficiency.
 9. Tampilan ranking performa dan kesimpulan otomatis.
 
----
+# Struktur Folder
 
-## Struktur Folder
-
-```
 project/
 ├── src/
 │   ├── main.cpp                  # Entry point
@@ -74,11 +67,8 @@ project/
 │
 ├── CMakeLists.txt
 └── README.md
-```
 
----
-
-## Dependensi
+# Dependensi
 
 | Dependensi | Versi Minimum | Keterangan                                    |
 |------------|---------------|-----------------------------------------------|
@@ -88,9 +78,9 @@ project/
 | OpenCL     | 1.2           | `ocl-icd-opencl-dev` + driver GPU (Linux)     |
 | GCC/Clang  | 9+            | Kompiler C++                                  |
 
-### Instalasi dependensi (Ubuntu/Debian)
+# Instalasi dependensi (Ubuntu/Debian)
 
-```bash
+bash
 sudo apt update
 sudo apt install build-essential cmake libgomp1 ocl-icd-opencl-dev opencl-headers
 
@@ -102,16 +92,15 @@ sudo apt install mesa-opencl-icd
 
 # Untuk CPU OpenCL (fallback tanpa GPU):
 sudo apt install pocl-opencl-icd
-```
 
-### Instalasi dependensi (macOS)
+# Instalasi dependensi (macOS)
 
 OpenMP dan OpenCL sudah tersedia melalui Xcode Command Line Tools. Tidak perlu
 instalasi tambahan. Kompilasi menggunakan `clang++`.
 
 ---
 
-## Cara Build
+# Cara Build
 
 ```bash
 # Clone atau masuk ke direktori proyek
@@ -125,30 +114,24 @@ cmake ..
 
 # Kompilasi
 make -j$(nproc)
-```
 
 Setelah kompilasi berhasil, binary `simulasi_evakuasi` tersedia di dalam direktori `build/`.
 
----
-
 ## Cara Menjalankan Program
 
-```bash
+bash
 # Dari dalam direktori build/
 ./simulasi_evakuasi
 
 # Atau dengan path dataset eksplisit
 ./simulasi_evakuasi ../dataset/dataset_waktu_evakuasi_gedung_500k.csv
-```
 
----
-
-## Cara Menjalankan OpenMP
+# Cara Menjalankan OpenMP
 
 OpenMP diaktifkan secara otomatis oleh CMakeLists.txt melalui flag `-fopenmp`.
 Untuk mengontrol jumlah thread:
 
-```bash
+bash
 # Gunakan 8 thread
 OMP_NUM_THREADS=8 ./simulasi_evakuasi
 
@@ -158,9 +141,7 @@ OMP_NUM_THREADS=8 ./simulasi_evakuasi
 
 Program akan menampilkan jumlah thread aktif yang digunakan OpenMP.
 
----
-
-## Cara Menjalankan OpenCL
+# Cara Menjalankan OpenCL
 
 OpenCL diaktifkan secara otomatis. Program akan:
 1. Mendeteksi GPU secara otomatis (prioritas utama).
@@ -172,11 +153,8 @@ Untuk memeriksa device OpenCL yang tersedia di sistem:
 clinfo
 ```
 
----
-
 ## Contoh Output
 
-```
 [INFO] Membaca dataset: dataset/dataset_waktu_evakuasi_gedung_500k.csv
 [INFO] 500000 data berhasil dimuat.
 
@@ -201,12 +179,10 @@ clinfo
   Jumlah Data           : 500000
   Kecepatan Evakuasi    : 1.2 m/s
 
--------------------------------------------------------
   Sequential
 -------------------------------------------------------
   Waktu Eksekusi        : 4.2318 detik
 
--------------------------------------------------------
   OpenMP
 -------------------------------------------------------
   Jumlah Thread         : 12
@@ -218,27 +194,23 @@ clinfo
   Jumlah Work-Item      : 500000
   Waktu Eksekusi        : 0.1847 detik
 
--------------------------------------------------------
   HASIL SPEEDUP
 -------------------------------------------------------
   OpenMP                : 10.32x
   OpenCL                : 22.91x
 
--------------------------------------------------------
   HASIL EFFICIENCY
 -------------------------------------------------------
   OpenMP                : 86.00 %
   OpenCL                : 0.00 %
 
--------------------------------------------------------
   RANKING PERFORMA
 -------------------------------------------------------
   1. OpenCL  (0.1847 detik)
   2. OpenMP  (0.4102 detik)
   3. Sequential  (4.2318 detik)
 
--------------------------------------------------------
-  KESIMPULAN
+
 -------------------------------------------------------
   Metode tercepat adalah OpenCL.
 
@@ -248,30 +220,25 @@ clinfo
   Overhead transfer data CPU-GPU terkompensasi oleh kecepatan
   eksekusi kernel pada dataset besar.
 -------------------------------------------------------
-```
 
----
-
-## Analisis Benchmark
+# Analisis Benchmark
 
 Lihat `docs/analisis_benchmark.md` untuk penjelasan lengkap speedup, efficiency,
 overhead, dan perbandingan ketiga metode.
 
----
-
-## Penjelasan Sequential
+# Penjelasan Sequential
 
 Sequential adalah metode baseline: satu thread CPU mengeksekusi loop dari indeks 0
 sampai 499.999 secara berurutan. Tidak ada paralelisme. Digunakan sebagai referensi
 untuk menghitung speedup metode lain.
 
-## Penjelasan OpenMP
+# Penjelasan OpenMP
 
 OpenMP menggunakan directive `#pragma omp parallel for` untuk membagi iterasi loop
 ke beberapa thread CPU. Setiap thread mengerjakan subset data secara independen.
 Tidak ada transfer data ke device lain, sehingga overhead rendah.
 
-## Penjelasan OpenCL
+# Penjelasan OpenCL
 
 OpenCL mengirim data ke device (GPU/CPU OpenCL), kemudian menjalankan kernel.
 Setiap work-item memproses tepat satu data ruangan. GPU dapat menjalankan ribuan
