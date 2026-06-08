@@ -1,6 +1,8 @@
 # Simulasi Waktu Evakuasi Gedung
 # Perbandingan Kinerja Sequential, OpenMP, dan OpenCL
 
+# link youtube video presentasi : https://youtu.be/oI4XNUSZrto
+
 # Nama Penyusun
 1. Reyfani Nazuwa Putri ( 25032014076 )
 2. Tshabita Roihana Yusriah Iman ( 25032014050 )
