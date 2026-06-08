@@ -9,7 +9,6 @@
 3. Azzahra Regita Cahyani ( 25032014071 )
 
 # Deskripsi Proyek
-
 Program ini membandingkan kinerja tiga metode komputasi — Sequential, OpenMP,
 dan OpenCL — dalam memproses simulasi perhitungan waktu evakuasi gedung berdasarkan
 data 500.000 ruangan virtual. Setiap ruangan memiliki jumlah penghuni dan jarak ke
