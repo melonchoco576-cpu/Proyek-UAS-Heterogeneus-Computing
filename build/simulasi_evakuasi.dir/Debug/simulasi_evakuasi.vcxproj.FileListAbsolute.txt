@@ -1,2 +1,0 @@
-C:\Users\viola\OneDrive\문서\Proyek-UAS-Heterogeneus-Computing\build\Debug\OpenCL.dll
-C:\Users\viola\OneDrive\문서\Proyek-UAS-Heterogeneus-Computing\build\simulasi_evakuasi.dir\Debug\simulasi.0D1B6F07.Up2Date
