@@ -39,30 +39,32 @@ metode, lalu menampilkan ranking performa beserta kesimpulan.
 
 # Struktur Folder
 
+# Struktur Folder
+
 project/
 ├── src/
-│   ├── main.cpp                  # Entry point
+│   ├── main.cpp                  # Entry point program
 │   ├── csv_reader.h/.cpp         # Pembaca dan validator dataset CSV
 │   ├── sequential.h/.cpp         # Implementasi Sequential
 │   ├── openmp_runner.h/.cpp      # Implementasi OpenMP
 │   ├── opencl_runner.h/.cpp      # Implementasi OpenCL
-│   ├── benchmark.h/.cpp          # Speedup, efficiency, tampilan hasil
-│   ├── data_model.h              # Struct RoomData, EvacuationResult, BenchmarkResult
-│   └── evacuation_kernel.cl      # OpenCL kernel
+│   ├── benchmark.h/.cpp          # Perhitungan speedup dan efficiency
+│   ├── data_model.h              # Struktur data program
+│   └── evacuation_kernel.cl      # Kernel OpenCL
 │
 ├── dataset/
 │   └── dataset_waktu_evakuasi_gedung_500k.csv
 │
 ├── docs/
-│   ├── laporan_singkat.md
-│   ├── contoh_output.txt
-│   └── analisis_benchmark.md
+│   ├── LAPORAN UAS ARKOM HETEROGENEOUS COMPUTING.pdf
+│   ├── analisis_benchmark.md
+│   ├── input_sistem.txt
+│   └── output_sistem.txt
 │
 ├── test/
-│   ├── hasil_sequential.txt
-│   ├── hasil_openmp.txt
-│   └── hasil_opencl.txt
+│   └── hasil_benchmark.txt
 │
+├── .gitignore
 ├── CMakeLists.txt
 └── README.md
 
@@ -78,19 +80,22 @@ project/
 
 # Instalasi dependensi (Ubuntu/Debian)
 
-bash
+# Instalasi Dependensi (Ubuntu/Debian)
+
+```bash
 sudo apt update
 sudo apt install build-essential cmake libgomp1 ocl-icd-opencl-dev opencl-headers
 
-# Untuk GPU NVIDIA:
+# Untuk GPU NVIDIA
 sudo apt install nvidia-opencl-dev
 
-# Untuk GPU AMD:
+# Untuk GPU AMD
 sudo apt install mesa-opencl-icd
 
-# Untuk CPU OpenCL (fallback tanpa GPU):
+# Untuk CPU OpenCL (fallback tanpa GPU)
 sudo apt install pocl-opencl-icd
 
+```
 # Instalasi dependensi (macOS)
 
 OpenMP dan OpenCL sudah tersedia melalui Xcode Command Line Tools. Tidak perlu
@@ -99,7 +104,6 @@ instalasi tambahan. Kompilasi menggunakan `clang++`.
 ---
 
 # Cara Build
-
 ```bash
 # Clone atau masuk ke direktori proyek
 cd project
@@ -112,24 +116,22 @@ cmake ..
 
 # Kompilasi
 make -j$(nproc)
+```
+Setelah kompilasi berhasil, binary `simulasi_evakuasi` tersedia di dalam direktori `build`.
 
-Setelah kompilasi berhasil, binary `simulasi_evakuasi` tersedia di dalam direktori `build/`.
-
-## Cara Menjalankan Program
-
-bash
+# Cara Menjalankan Program
+```bash
 # Dari dalam direktori build/
 ./simulasi_evakuasi
 
 # Atau dengan path dataset eksplisit
 ./simulasi_evakuasi ../dataset/dataset_waktu_evakuasi_gedung_500k.csv
 
-# Cara Menjalankan OpenMP
 
+# Cara Menjalankan OpenMP
 OpenMP diaktifkan secara otomatis oleh CMakeLists.txt melalui flag `-fopenmp`.
 Untuk mengontrol jumlah thread:
-
-bash
+```bash
 # Gunakan 8 thread
 OMP_NUM_THREADS=8 ./simulasi_evakuasi
 
