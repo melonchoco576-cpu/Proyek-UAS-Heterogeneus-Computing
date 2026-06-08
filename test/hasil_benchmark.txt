@@ -1,0 +1,73 @@
+[INFO] Membaca dataset: dataset/dataset_waktu_evakuasi_gedung_500k.csv
+[INFO] 500000 data berhasil dimuat.
+
+[INFO] Menjalankan Sequential...
+[INFO] Sequential selesai.
+
+[INFO] Menjalankan OpenMP...
+[INFO] OpenMP selesai.
+
+[INFO] Menjalankan OpenCL...
+[OpenCL] Device : NVIDIA GeForce MX150 (GPU)
+[INFO] OpenCL selesai.
+
+[INFO] Memvalidasi konsistensi hasil...
+[VALIDASI] OpenMP  : hasil identik dengan Sequential.
+[VALIDASI] OpenCL  : hasil identik dengan Sequential.
+
+
+-------------------------------------------------------
+  SIMULASI WAKTU EVAKUASI GEDUNG
+-------------------------------------------------------
+  Dataset             : dataset/dataset_waktu_evakuasi_gedung_500k.csv
+  Jumlah Data         : 500000
+  Kecepatan Evakuasi  : 1.2 m/s
+
+-------------------------------------------------------
+  Sequential
+-------------------------------------------------------
+  Waktu Eksekusi      : 1.4069 detik
+
+-------------------------------------------------------
+  OpenMP
+-------------------------------------------------------
+  Jumlah Thread       : 8
+  Waktu Eksekusi      : 0.6379 detik
+
+-------------------------------------------------------
+  OpenCL
+-------------------------------------------------------
+  Jumlah Work-Item    : 500000
+  Waktu Eksekusi      : 0.0102 detik
+
+-------------------------------------------------------
+  HASIL SPEEDUP
+-------------------------------------------------------
+  OpenMP              : 2.21x
+  OpenCL              : 138.15x
+
+-------------------------------------------------------
+  HASIL EFFICIENCY
+-------------------------------------------------------
+  OpenMP              : 27.57 %
+  OpenCL              : 0.03 %
+
+-------------------------------------------------------
+  RANKING PERFORMA
+-------------------------------------------------------
+  1. OpenCL  (0.0102 detik)
+  2. OpenMP  (0.6379 detik)
+  3. Sequential  (1.4069 detik)
+
+-------------------------------------------------------
+  KESIMPULAN
+-------------------------------------------------------
+  Metode tercepat adalah OpenCL.
+
+  OpenCL memanfaatkan ribuan core GPU secara masif paralel.
+  Setiap work-item memproses satu data ruangan secara independen,
+  sehingga 500.000 komputasi berjalan hampir bersamaan.
+  Overhead transfer data CPU-GPU terkompensasi oleh kecepatan
+  eksekusi kernel pada dataset besar.
+-------------------------------------------------------
+
