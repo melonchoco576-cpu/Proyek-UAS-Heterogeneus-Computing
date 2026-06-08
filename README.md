@@ -240,3 +240,6 @@ OpenCL mengirim data ke device (GPU/CPU OpenCL), kemudian menjalankan kernel.
 Setiap work-item memproses tepat satu data ruangan. GPU dapat menjalankan ribuan
 work-item secara bersamaan. Ada overhead transfer data host-to-device dan
 device-to-host, tetapi terkompensasi pada dataset besar.
+
+# LINK VIDEO YOUTUBE
+https://youtu.be/oI4XNUSZrto
